@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SMARTMECHANIC-FEEDBACK</title>
+    <!-- Custom File Link -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icon Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://kit.fontawesome.com/29245326e0.js" crossorigin="anonymous"></script>
+
+    <!-- ----------------------------------------------------------- -->
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web-name">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Umar Farooq">
+
+
+
+<link rel="stylesheet" type="text/css" href="http://codeclasschat.herokuapp.com/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://codeclasschat.herokuapp.com/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://codeclasschat.herokuapp.com/helpers.js"></script>
+
+    <script> jQuery(document).ready(function(){
+      $('.btn').click(function(){
+        var textarea_message = $('.new-message').val();
+        helpers.sendMessage(textarea_message);
+        $('.new-message').val('');
+      });
+      setInterval(function(){
+        helpers.fetchNewMessages(function(messages){
+          $.each(messages, function (i, message){
+            helpers.renderMessage(message);
+          });
+        //helpers.renderMessage()
+      });
+      }, 2000);
+
+    });
+    </script>
+
+
+</head>
+<body>
+  
+
+<!-- --- NAVBAR SECTION START --- -->
+
+<nav class="navbar">
+  <a href="index.html">  <i class="fas fa-home"> </i><span>home</span> </a>
+  <a href="advisor.html"> <i class="fa-solid fa-headset"></i> </i><span>Advisor</span> </a>
+  <a href="services.html"> <i class="fa-solid fa-gears"></i><span>Services</span> </a>
+  <a href="feedback.html"> <i class="fa-solid fa-comments"></i></i> <span>FeedBack</span> </a>
+  <a href="contact.html"> <i class="fas fa-address-book"></i> <span>Contact</span> </a>
+</nav>
+
+
+<!-- --- NAVBAR SECTION END --- -->
+
+
+    <textarea class="new-message"></textarea>
+    <input class="btn" type="submit"></input>
+
+
+</body>
+</html>
+
+
